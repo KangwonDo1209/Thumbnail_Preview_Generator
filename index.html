@@ -12,7 +12,8 @@
                 padding: 0;
             }
             .container {
-                max-width: 600px;
+                max-width: 1280px;
+                min-width: 1280px;
                 margin: 40px auto;
                 background: #fff;
                 border-radius: 16px;
@@ -53,8 +54,9 @@
     <body>
         <div class="container">
             <div class="file-section">
-                <label for="photoInput">포장알바 적용샷 생성기</label>
-                <p>1280x720 비율만 사용 가능</p>
+                <label for="photoInput">포장알바 적용샷 생성기 0.1ver</label>
+                <p>1280x720 사이즈만 사용 가능</p>
+                <p>사진 저장 가능</p>
                 <input type="file" id="photoInput" accept="image/*" />
             </div>
             <div class="preview-section">
@@ -96,23 +98,6 @@
                         newWidth,
                         newHeight
                     );
-
-                    // 사진 상단에 텍스트 추가 (예쁘게)
-                    const text = "썸네일 미리보기";
-                    ctx.save();
-                    ctx.font =
-                        "bold 36px 'Pretendard', 'Malgun Gothic', Arial, sans-serif";
-                    ctx.textAlign = "center";
-                    ctx.textBaseline = "top";
-                    ctx.shadowColor = "rgba(0,0,0,0.5)";
-                    ctx.shadowBlur = 8;
-                    ctx.fillStyle = "#fff";
-                    ctx.fillText(text, canvas.width / 2, 40);
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = "#222";
-                    ctx.strokeText(text, canvas.width / 2, 40);
-                    ctx.restore();
-
                     // 그 위에 torrent.png를 그림 (앞에 배치)
                     ctx.drawImage(torrentImg, 0, 0);
                 }
